@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include "Player.h"
 
 using std::vector;
 using std::string;
@@ -23,41 +24,21 @@ protected:
 
 public:
     virtual ~GameFactory() = default;
-    // Suitable operations: see class Game
-
+	virtual vector<Obstacle*> makeObstacles()=0;
+	virtual vector<Action*> makeActions()=0;
+	virtual Player* makePlayer()=0;
 };
 
+class NastyGameFactory : public GameFactory {
+public:
+	vector<Obstacle*> makeObstacles();
+	vector<Action*> makeActions();
+	Player* makePlayer() { return new HeroPlayer(); }
+};
 
-/**
-     * NastyGameFactory:
-     *
-     * Suitable operations
-     * (implementations of GameFactory.cpp)
-     *
-     * Obstacles:
-     * Dragon, Bomb, Samuray, SumoWrestler, Gangster
-     *
-     * Possible Actions:
-     * BowAndShakeHandsAction, RunAndHideAction, SwordAction, RifleAction,
-     * OfferFoodAction, ChainsawAction, CastAspellAction, BargainAndBuyAction, SurrenderAction
-     *
-     * Player:
-     * HeroPlayer
-     */
-
-/**
-     * NiceGameFactory:
-     *
-     * Suitable operations
-     * (implementations of GameFactory.cpp)
-     *
-     * Obstacles:
-     * Wizard, Wall, Elephant, DPexam
-     *
-     * Possible Actions:
-     * BowAndShakeHandsAction, RunAndHideAction, BargainAndBuyAction,
-     * ChainsawAction, ClimbAction, CastAspellAction, SurrenderAction
-     *
-     * Player:
-     * OrdinaryPlayer
-     */
+class NiceGameFactory : public GameFactory {
+public:
+	vector<Obstacle*> makeObstacles();
+	vector<Action*> makeActions();
+	Player* makePlayer() { return new OrdinaryPlayer(); }
+};

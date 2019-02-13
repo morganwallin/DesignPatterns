@@ -1,6 +1,6 @@
 .idea
 .vs
-
+*.opendb
 .DS_Store
 
 *.~
@@ -45,3 +45,12 @@ compile_commands.json
 CTestTestfile.cmake
 cmake-build-debug
 cmake-build-release
+
+*.dir
+*.vcxproj
+*.vcxproj.*
+*.sdf
+*.sln
+.gitattributes
+Debug
+Win32

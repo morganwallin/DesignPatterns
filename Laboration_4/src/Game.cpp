@@ -13,20 +13,10 @@ void destroyVectorElements(vector<T> &vec);
 
 
 Game::Game(GameFactory *gFact) {
-    /**
-     * gFact points to a concrete Factory-object which needs to perform the operations.
-     *
-     * makeObstacles:
-     * Fill 'obstacles' with pointers to the game's Obstacle-objects!
-     *
-     * makeActions:
-     * Fill 'actions' with pointers to the Action-objects the player may choose from
-     *
-     * makePlayer:
-     * Assign 'player' a pointer to a concrete Player-object
-     *
-     * Give 'title' a suitable name
-     */
+	title = "Morgans Game";
+	obstacles = gFact->makeObstacles();
+	actions = gFact->makeActions();
+	player = gFact->makePlayer();
 }
 
 Game::~Game() {
@@ -77,5 +67,9 @@ void Game::play( ) {
 
 template<typename T>
 void destroyVectorElements(vector<T> &vec) {
-    // TODO
+	for (std::vector<T>::iterator it = vec.begin(); it != vec.end(); ++it)
+	{
+		delete (*it);
+	}
+	vec.clear();
 }
