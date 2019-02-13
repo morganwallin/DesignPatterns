@@ -20,18 +20,18 @@ public:
 
 	explicit operator string() const { return name; }
 
-	bool operator==(const Ingredient& rhs) const {
+	inline bool operator==(const Ingredient& rhs) const {
 		return name == rhs.getName();
 	}
 
-    bool operator<(const Ingredient& rhs) const {
+	inline bool operator<(const Ingredient& rhs) const {
         return name < rhs.getName();
     }
 
-	friend ostream& operator<<(ostream& os, const Ingredient& ing);
+	inline friend ostream& operator<<(ostream& os, const Ingredient& ing);
 };
 
-ostream& operator<<(ostream& os, const Ingredient& ing) {
+inline ostream& operator<<(ostream& os, const Ingredient& ing) {
 	os << ing.name;
 	return os;
 }

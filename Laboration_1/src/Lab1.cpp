@@ -1,15 +1,18 @@
-//------------------------------------------------------------------------------
-// Lab1.cpp DT063G Design Patterns With C++
-//------------------------------------------------------------------------------
+#include "Uppgift1.h"
+#include "SoundProducer.h"
+#include "Whisperer.h"
+#include "Shouter.h"
+#include "memstat.hpp"
 
-#include "../include/Lab1.h"
-#include <iostream>
-
-/**
- * Main program
- */
-int main() {
-    std::cout << getAssignmentInfo() << std::endl;
+int main()
+{
+	Uppgift1 uppg1;
+	uppg1.setSoundProducer(new Whisperer);
+	uppg1.saySomething();
+	uppg1.setSoundProducer(new Shouter);
+	uppg1.saySomething();
+	int input;
+	std::cin >> input;
     return 0;
 }
 
