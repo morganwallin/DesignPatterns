@@ -19,10 +19,4 @@ void Uppgift1::setSoundProducer(SoundProducer* sp) {
 
 void Uppgift1::saySomething() {
 	soundProducer->makeSound();
-	if (dynamic_cast<Whisperer*>(soundProducer) != nullptr) {
-		std::cout << "Ssch, hush, hush\n";
-	}
-	else if (dynamic_cast<Shouter*>(soundProducer) != nullptr) {
-		std::cout << "WOW YEEEH!!\n";
-	}
 }

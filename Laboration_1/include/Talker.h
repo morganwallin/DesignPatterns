@@ -6,6 +6,6 @@ class Talker {
 private:
 public:
 	Talker() {};
-	virtual ~Talker() {};
+	virtual ~Talker() = default;
 	virtual void saySomething()=0;
 };

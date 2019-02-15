@@ -7,8 +7,6 @@ SoundProducer::SoundProducer(std::string nameOfSound) {
 	soundName = nameOfSound;
 }
 
-SoundProducer::~SoundProducer() {}
-
 std::string SoundProducer::getSoundName() {
 	return soundName;
 }

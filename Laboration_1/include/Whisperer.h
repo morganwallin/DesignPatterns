@@ -6,6 +6,6 @@
 class Whisperer : public SoundProducer {
 public: 
 	Whisperer();
-	~Whisperer() {};
+	~Whisperer() = default;
 	void makeSound();
 };

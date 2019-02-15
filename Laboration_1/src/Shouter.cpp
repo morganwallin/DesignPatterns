@@ -5,5 +5,5 @@ Shouter::Shouter() {
 }
 
 void Shouter::makeSound() {
-	std::cout << getSoundName() << ": ";
+	std::cout << getSoundName() << ": " << "THIS IS THE SHOUTER";
 }

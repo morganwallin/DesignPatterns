@@ -5,5 +5,5 @@ Whisperer::Whisperer() {
 }
 
 void Whisperer::makeSound() {
-	std::cout << getSoundName() << ": ";
+	std::cout << getSoundName() << ": " << "this is the whisperer";
 }

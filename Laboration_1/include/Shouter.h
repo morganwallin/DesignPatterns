@@ -5,7 +5,7 @@
 
 class Shouter : public SoundProducer {
 public:
-	~Shouter() {};
+	~Shouter() = default;
 	Shouter();
 	void makeSound();
 };
