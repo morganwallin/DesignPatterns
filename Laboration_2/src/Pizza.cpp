@@ -4,7 +4,7 @@
 
 Pizza::Pizza() : BakingRecepy("Pizza")
 {
-	neededIng = { Ingredient("oil"), Ingredient("yeast"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("tomato-sauce") };
+	neededIngredients = { Ingredient("oil"), Ingredient("yeast"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("tomato-sauce") };
 }
 
 

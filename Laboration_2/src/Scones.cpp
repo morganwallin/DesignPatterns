@@ -4,7 +4,7 @@
 
 Scones::Scones() : BakingRecepy("Scones")
 {
-	neededIng = { Ingredient("oil"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("sugar"), Ingredient("milk") };
+	neededIngredients = { Ingredient("oil"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("sugar"), Ingredient("milk") };
 }
 
 void Scones::bakeIt() {

@@ -1,15 +1,19 @@
 #pragma once
 
 #include "BakingRecepyManager.h"
+#include <iostream>
 
+//Bakery class is used as a client, runs the simulation for a bakery.
 class Bakery
 {
 private:
-	BakingRecepyManager brm;
+	BakingRecepyManager bakingRecepyManager;
+	
 public:
-	Bakery(std::string fileName);
-	virtual ~Bakery();
+	Bakery();
+	void runBakery();
+	virtual ~Bakery() = default;
 
-	BakingRecepyManager& getBrm() { return brm; };
+	BakingRecepyManager& getBakingRecepyManager() { return bakingRecepyManager; };
 };
 

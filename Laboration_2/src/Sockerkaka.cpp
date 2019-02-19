@@ -4,7 +4,7 @@
 
 Sockerkaka::Sockerkaka() : BakingRecepy("Sockerkaka")
 {
-	neededIng = { Ingredient("egg"), Ingredient("sugar"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("marge"), Ingredient("lemon") };
+	neededIngredients = { Ingredient("egg"), Ingredient("sugar"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("marge"), Ingredient("lemon") };
 }
 
 void Sockerkaka::bakeIt() {

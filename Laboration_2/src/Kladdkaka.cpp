@@ -4,7 +4,7 @@
 
 Kladdkaka::Kladdkaka() : BakingRecepy("Kladdkaka")
 {
-	neededIng = { Ingredient("egg"), Ingredient("sugar"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("marge"), Ingredient("cocoa-powder") };
+	neededIngredients = { Ingredient("egg"), Ingredient("sugar"), Ingredient("baking-powder"), Ingredient("wheat-flour"), Ingredient("salt"), Ingredient("marge"), Ingredient("cocoa-powder") };
 }
 
 void Kladdkaka::bakeIt() {

@@ -11,7 +11,7 @@ BakingRecepyManager::BakingRecepyManager(std::string fileName)
 	sockerkaka.reset(new Sockerkaka());
 	std::shared_ptr<Kladdkaka> kladdkaka;
 	kladdkaka.reset(new Kladdkaka());
-	brVector = { std::move(pizza), std::move(scones), std::move(sockerkaka), std::move(kladdkaka)};
+	bakingRecepies = { std::move(pizza), std::move(scones), std::move(sockerkaka), std::move(kladdkaka)};
 
 	std::ifstream infile(fileName);
 	if (!infile.is_open()) {
@@ -21,34 +21,31 @@ BakingRecepyManager::BakingRecepyManager(std::string fileName)
 
 	std::string line;
 	while (getline(infile, line)) {
-		availableIngredient.push_back(Ingredient(line));
+		availableIngredients.push_back(Ingredient(line));
 	}
 
 	infile.close();
 }
 
-BakingRecepyManager::~BakingRecepyManager()
-{
-	
-}
-
 bool BakingRecepyManager::hasAnotherRecepy() {
-	if (brVector.size() > 1) {
-		return false;
+	if (bakingRecepies.size() >= 1) {
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
 
 std::shared_ptr<BakingRecepy> BakingRecepyManager::getNextBakingRecepy() {
-	try {
-		brVector.erase(brVector.begin());
-		return brVector.at(0);
+	if (hasAnotherRecepy()) {
+		auto bakingRecepy = bakingRecepies.at(0);
+		bakingRecepies.erase(bakingRecepies.begin());
+		return bakingRecepy;
 	}
-	catch (std::exception& e) {
+	else {
 		throw NoBakingException("No more recepies available.");
 		exit(1);
 	}
+	
 	
 }

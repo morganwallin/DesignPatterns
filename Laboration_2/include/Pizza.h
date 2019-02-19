@@ -3,11 +3,12 @@
 
 #include <string>
 
+//A Pizza classs derived from the base class BakingRecepy
 class Pizza :
 	public BakingRecepy
 {
 public:
 	Pizza();
-	void bakeIt();
+	void bakeIt() override;
 };
 
