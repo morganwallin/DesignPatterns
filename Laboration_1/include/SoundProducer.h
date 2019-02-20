@@ -12,5 +12,4 @@ public:
 	virtual ~SoundProducer() = default;
 	virtual void makeSound()=0;
 	std::string getSoundName();
-	void setSoundName(std::string pmSoundName);
 };

@@ -10,7 +10,3 @@ SoundProducer::SoundProducer(std::string nameOfSound) {
 std::string SoundProducer::getSoundName() {
 	return soundName;
 }
-
-void SoundProducer::setSoundName(std::string pmSoundName) {
-	soundName = pmSoundName;
-}

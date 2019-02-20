@@ -1,7 +1,6 @@
 #include "Shouter.h"
 
-Shouter::Shouter() {
-	setSoundName("Shout");
+Shouter::Shouter() : SoundProducer("Shout"){
 }
 
 void Shouter::makeSound() {

@@ -1,7 +1,6 @@
 #include "Whisperer.h"
 
-Whisperer::Whisperer() {
-	setSoundName("Whisper");
+Whisperer::Whisperer() : SoundProducer("Whisper"){
 }
 
 void Whisperer::makeSound() {
