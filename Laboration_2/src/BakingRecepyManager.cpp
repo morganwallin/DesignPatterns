@@ -37,15 +37,20 @@ bool BakingRecepyManager::hasAnotherRecepy() {
 }
 
 std::shared_ptr<BakingRecepy> BakingRecepyManager::getNextBakingRecepy() {
-	if (hasAnotherRecepy()) {
-		auto bakingRecepy = bakingRecepies.at(0);
-		bakingRecepies.erase(bakingRecepies.begin());
-		return bakingRecepy;
+	while (true) {
+		if (hasAnotherRecepy()) {
+			auto bakingRecepy = bakingRecepies.at(0);
+			bakingRecepies.erase(bakingRecepies.begin());
+			if (bakingRecepy->isBakeable(availableIngredients)) {
+				return bakingRecepy;
+			}
+			else {
+				continue;
+			}
+		}
+		else {
+			throw NoBakingException("No more recepies available.");
+			exit(1);
+		}
 	}
-	else {
-		throw NoBakingException("No more recepies available.");
-		exit(1);
-	}
-	
-	
 }

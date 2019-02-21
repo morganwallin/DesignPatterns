@@ -13,7 +13,6 @@ public:
 	Bakery();
 	void runBakery();
 	virtual ~Bakery() = default;
-
 	BakingRecepyManager& getBakingRecepyManager() { return bakingRecepyManager; };
 };
 
