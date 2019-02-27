@@ -1,9 +1,5 @@
 #include "Vehicle.h"
 
-std::string Vehicle::toString() {
-	return "Vehicle";
-}
-
 std::string Vehicle::poweredBy() {
 	return powerSource->type();
 }
@@ -14,7 +10,7 @@ bool Vehicle::tryStart() {
 
 bool Vehicle::stop() {
 	powerSource->stop();
-	return true;
+	return powerSource->isRunning();
 }
 
 bool Vehicle::incPower(int p) {

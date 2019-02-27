@@ -2,29 +2,35 @@
 
 #include <string>
 #include "PowerSource.h"
+#include "PowerSourceAdapters.h"
 #include <iostream>
 #include <memory>
+#include <string>
 
+//Base class Vehicle
 class Vehicle {
 public:
-	Vehicle() {};
-	Vehicle(std::shared_ptr<PowerSource> ps) { powerSource = ps; }
-	virtual ~Vehicle() {};
-	virtual std::string toString(); // e.g."SpaceShutte"
-	std::string poweredBy(); // e.g."FuelCell"
-	bool tryStart(); // Try to start the powersource
-	bool stop(); // Stop the powersource
-	bool incPower(int p = 5); // Increase power
-	bool decPower(int p = 5); // Decrease power
+	Vehicle() = default;
+	explicit Vehicle(std::shared_ptr<PowerSource> ps) { powerSource = ps; }
+	virtual ~Vehicle() = default;
+	virtual std::string toString() { return vehicleType; } // e.g."SpaceShutte"
+	virtual std::string poweredBy(); // e.g."FuelCell"
+	
 	virtual void drive() = 0; // Simulate a driving scenario
-	void setPowerSource(std::shared_ptr<PowerSource> ps); // Change PowerSource
+	virtual void setPowerSource(std::shared_ptr<PowerSource> ps); // Change PowerSource
 
-									   //Operations for steering
-	virtual void steerLeft(int degrees) = 0;
-	virtual void steerRight(int degrees) = 0;
+	
 	
 	//Optional driving operations of your choice
 	//...
-private:
+protected:
 	std::shared_ptr<PowerSource> powerSource;
+	std::string vehicleType;
+	virtual bool tryStart(); // Try to start the powersource
+	virtual bool stop(); // Stop the powersource
+	virtual bool incPower(int p = 5); // Increase power
+	virtual bool decPower(int p = 5); // Decrease power
+									  //Operations for steering
+	virtual void steerLeft(int degrees) = 0;
+	virtual void steerRight(int degrees) = 0;
 };

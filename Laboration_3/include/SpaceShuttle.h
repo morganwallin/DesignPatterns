@@ -1,16 +1,12 @@
 #pragma once
 #include "Vehicle.h"
 
-class SpaceShuttle
+//SpaceShuttle class derived from base class Vehicle, creates a SpaceShuttle with the specified powersource
+class SpaceShuttle : public Vehicle
 {
-private:
-	std::string vehicleType;
-
 public:
-	SpaceShuttle() { vehicleType = "SpaceShuttle"; };
-	~SpaceShuttle() {};
+	SpaceShuttle(std::shared_ptr<PowerSource> ps) : Vehicle(ps) { vehicleType = "SpaceShuttle";};
 
-	std::string toString() { return vehicleType; }
 	void drive();
 	void steerLeft(int degrees);
 	void steerRight(int degrees);

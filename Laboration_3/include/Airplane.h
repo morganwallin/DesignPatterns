@@ -1,15 +1,12 @@
 #pragma once
 #include "Vehicle.h"
-class Airplane
+
+//Airplane class derived from base class Vehicle, creates a Airplane with the specified powersource
+class Airplane : public Vehicle
 {
-private:
-	std::string vehicleType;
-
 public:
-	Airplane() { vehicleType = "Airplane"; };
-	~Airplane() {};
+	Airplane(std::shared_ptr<PowerSource> ps) : Vehicle(ps) { vehicleType = "Airplane"; };
 
-	std::string toString() { return vehicleType; }
 	void drive();
 	void steerLeft(int degrees);
 	void steerRight(int degrees);
