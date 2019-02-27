@@ -6,9 +6,9 @@ class Airplane : public Vehicle
 {
 public:
 	Airplane(std::shared_ptr<PowerSource> ps) : Vehicle(ps) { vehicleType = "Airplane"; };
-
-	void drive();
-	void steerLeft(int degrees);
-	void steerRight(int degrees);
+	void drive(); //Drive airplane
+private:
+	void steerLeft(int degrees); // Steer airplane left with specified degrees as parameter
+	void steerRight(int degrees);// Steer airplane right with specified degrees as parameter
 };
 

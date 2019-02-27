@@ -1,6 +1,6 @@
 #include "Submarine.h"
 
-
+//Drives submarine
 void Submarine::drive() {
 	std::cout << "Trying to start engine with power 0:\n";
 	tryStart();
@@ -24,10 +24,12 @@ void Submarine::drive() {
 	}
 }
 
+//Steers submarine left
 void Submarine::steerLeft(int degrees) {
 	std::cout << "Submarine steers " << degrees << " degrees to the left.\n";
 }
 
+//Steers submarine right
 void Submarine::steerRight(int degrees) {
 	std::cout << "Submarine steers " << degrees << " degrees to the left.\n";
 }

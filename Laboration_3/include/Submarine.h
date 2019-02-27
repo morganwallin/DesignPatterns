@@ -6,9 +6,9 @@ class Submarine : public Vehicle
 {
 public:
 	Submarine(std::shared_ptr<PowerSource> ps) : Vehicle(ps) { vehicleType = "Submarine"; };
-
-	void drive();
-	void steerLeft(int degrees);
-	void steerRight(int degrees);
+	void drive(); //Drive Submarine
+private:
+	void steerLeft(int degrees); // Steer Submarine left with specified degrees as parameter
+	void steerRight(int degrees);// Steer Submarine right with specified degrees as parameter
 };
 

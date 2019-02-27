@@ -1,5 +1,6 @@
 #include "Airplane.h"
 
+//Drives the airplane
 void Airplane::drive() {
 	std::cout << "Trying to start engine with power 0:\n";
 	tryStart();
@@ -22,10 +23,12 @@ void Airplane::drive() {
 	}
 }
 
+//Steers airplane left
 void Airplane::steerLeft(int degrees) {
 	std::cout << "Airplane steers " << degrees << " degrees to the left.\n";
 }
 
+//Steers airplane right
 void Airplane::steerRight(int degrees) {
 	std::cout << "Airplane steers " << degrees << " degrees to the left\n";
 }

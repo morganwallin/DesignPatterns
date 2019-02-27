@@ -6,9 +6,9 @@ class SpaceShuttle : public Vehicle
 {
 public:
 	SpaceShuttle(std::shared_ptr<PowerSource> ps) : Vehicle(ps) { vehicleType = "SpaceShuttle";};
-
-	void drive();
-	void steerLeft(int degrees);
-	void steerRight(int degrees);
+	void drive(); //Drive SpaceShuttle
+private:
+	void steerLeft(int degrees); // Steer SpaceShuttle left with specified degrees as parameter
+	void steerRight(int degrees);// Steer SpaceShuttle right with specified degrees as parameter
 };
 

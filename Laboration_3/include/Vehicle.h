@@ -11,7 +11,7 @@
 class Vehicle {
 public:
 	Vehicle() = default;
-	explicit Vehicle(std::shared_ptr<PowerSource> ps) { powerSource = ps; }
+	
 	virtual ~Vehicle() = default;
 	virtual std::string toString() { return vehicleType; } // e.g."SpaceShutte"
 	virtual std::string poweredBy(); // e.g."FuelCell"
@@ -24,6 +24,7 @@ public:
 	//Optional driving operations of your choice
 	//...
 protected:
+	explicit Vehicle(std::shared_ptr<PowerSource> ps) { powerSource = ps; }
 	std::shared_ptr<PowerSource> powerSource;
 	std::string vehicleType;
 	virtual bool tryStart(); // Try to start the powersource
@@ -31,6 +32,6 @@ protected:
 	virtual bool incPower(int p = 5); // Increase power
 	virtual bool decPower(int p = 5); // Decrease power
 									  //Operations for steering
-	virtual void steerLeft(int degrees) = 0;
-	virtual void steerRight(int degrees) = 0;
+	virtual void steerLeft(int degrees) = 0; //Steer left
+	virtual void steerRight(int degrees) = 0; //Steer right 
 };
