@@ -14,7 +14,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-
+//Action class, base class for all the different classes that will be available for the player
 class Action {
 protected:
     string typeStr;

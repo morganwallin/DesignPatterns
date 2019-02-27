@@ -11,7 +11,7 @@ using std::cin;
 template<typename T>
 void destroyVectorElements(vector<T> &vec);
 
-
+//Create object
 Game::Game(GameFactory *gFact) {
 	title = "Morgans Game";
 	obstacles = gFact->makeObstacles();
@@ -19,13 +19,14 @@ Game::Game(GameFactory *gFact) {
 	player = gFact->makePlayer();
 }
 
+//Destroy pointers
 Game::~Game() {
     destroyVectorElements(obstacles);
     destroyVectorElements(actions);
     delete player;
 }
 
-
+//Game simulation, lets player play the game
 void Game::play( ) {
 
     cout << "*** Welcome to " << title << " ***" << endl;

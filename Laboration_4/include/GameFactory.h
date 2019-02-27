@@ -17,7 +17,7 @@ class Player;
 class Obstacle;
 class Action;
 
-
+//Game factory, to be used in "Game"-class. Creates different settings depending on which type of Factory it will be
 class GameFactory {
 protected:
     GameFactory() { }

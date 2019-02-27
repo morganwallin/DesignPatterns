@@ -12,6 +12,7 @@
 using std::string;
 using std::ostream;
 
+//Base class Obstacle, obstacles that the player will try to pass
 class Obstacle {
 private:
     string typeStr;

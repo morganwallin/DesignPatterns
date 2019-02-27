@@ -11,6 +11,7 @@ using std::string;
 using std::ostream;
 using std::cout;
 
+//Player base class, resources, ammo, health and type is managed here
 class Player {
 private:
     string typeStr;
@@ -30,12 +31,14 @@ public:
     void show(ostream &os=cout);
 };
 
+//Ordinary player, derived from base class Player
 class OrdinaryPlayer : public Player {
 public:
     OrdinaryPlayer( )
             :Player("OrdinaryPlayer",5,3,3) { }
 };
 
+//HeroPlayer, derived from base class Player
 class HeroPlayer : public Player {
 public:
     HeroPlayer( )

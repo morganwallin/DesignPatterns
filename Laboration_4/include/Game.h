@@ -15,7 +15,8 @@ class Action;
 class Obstacle;
 class GameFactory;
 
-
+// Game class, contains all information regarding player, obstacles, actions etc
+// Uses game factory to create all settings
 class Game{
 private:
     string title;
