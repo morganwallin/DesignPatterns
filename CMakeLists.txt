@@ -34,7 +34,8 @@ aux_source_directory(${LAB_4}/src LABORATION_4)
 aux_source_directory(${LAB_5}/src LABORATION_5)
 aux_source_directory(${LAB_6}/src LABORATION_6)
 aux_source_directory(${LAB_7}/src LABORATION_7)
-aux_source_directory(${LAB_8}/src LABORATION_8)
+aux_source_directory(${LAB_8}/Assignment_1/src LABORATION_8_ASSIGNMENT_1)
+aux_source_directory(${LAB_8}/Assignment_2/src LABORATION_8_ASSIGNMENT_2)
 
 # Include additional files, important for respective assignment
 aux_source_directory(_CodeBase/Bakery LABORATION_2)
@@ -49,7 +50,8 @@ add_executable(${PROJECT_NAME}_${LAB_4} ${LABORATION_4})
 add_executable(${PROJECT_NAME}_${LAB_5} ${LABORATION_5})
 add_executable(${PROJECT_NAME}_${LAB_6} ${LABORATION_6})
 add_executable(${PROJECT_NAME}_${LAB_7} ${LABORATION_7})
-add_executable(${PROJECT_NAME}_${LAB_8} ${LABORATION_8})
+add_executable(${PROJECT_NAME}_${LAB_8}_ASSIGNMENT_1 ${LABORATION_8_ASSIGNMENT_1})
+add_executable(${PROJECT_NAME}_${LAB_8}_ASSIGNMENT_2 ${LABORATION_8_ASSIGNMENT_2})
 
 
 # In order to avoid '../../../' semantics in include paths (relative), we need to add
@@ -61,4 +63,5 @@ target_include_directories(${PROJECT_NAME}_${LAB_4} PRIVATE "./${LAB_4}/include"
 target_include_directories(${PROJECT_NAME}_${LAB_5} PRIVATE "./${LAB_5}/include" "./_CodeBase/Hanoi/include")
 target_include_directories(${PROJECT_NAME}_${LAB_6} PRIVATE "./${LAB_6}/include")
 target_include_directories(${PROJECT_NAME}_${LAB_7} PRIVATE "./${LAB_7}/include")
-target_include_directories(${PROJECT_NAME}_${LAB_8} PRIVATE "./${LAB_8}/include")
+target_include_directories(${PROJECT_NAME}_${LAB_8}_ASSIGNMENT_1 PRIVATE "./${LAB_8}/Assignment_1/include")
+target_include_directories(${PROJECT_NAME}_${LAB_8}_ASSIGNMENT_2 PRIVATE "./${LAB_8}/Assignment_2/include")
