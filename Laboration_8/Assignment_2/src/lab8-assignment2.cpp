@@ -2,13 +2,13 @@
 // Lab8.cpp DT063G Design Patterns With C++
 //------------------------------------------------------------------------------
 
-#include "../include/Lab8.h"
 #include <iostream>
-
+#include "Client.h"
 /**
- * Main program
- */
+* Main program
+*/
 int main() {
-    std::cout << getAssignmentInfo() << std::endl;
-    return 0;
+	Client client;
+	client.run();
+	return 0;
 }
