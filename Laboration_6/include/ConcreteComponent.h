@@ -3,6 +3,8 @@
 
 //Derived from Component, holds the beverage information
 class ConcreteComponent : public Component {
+protected:
+	ConcreteComponent() {}
 public:
 	std::string getName() const override {
 		return name;

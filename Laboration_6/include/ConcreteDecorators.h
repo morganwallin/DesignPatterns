@@ -7,10 +7,9 @@ class ConcreteDecorators : public Component
 {
 protected:
 	std::shared_ptr<Component> nextComp; //Pointer to object to be decorated
-
-public:
 	ConcreteDecorators(std::shared_ptr<Component> comp) : nextComp(comp) {}
 
+public:
 	// Returns updated name: 'Beverage name + extra + etc';
 	std::string getName() const override {
 		return nextComp->getName() + " + " + name;
