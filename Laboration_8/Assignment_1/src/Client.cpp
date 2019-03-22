@@ -6,7 +6,8 @@ void Client::run() {
 	int choice;
 	bool keepOn = true;
 
-	GameFactory *gf;
+	GameFactory *gf = nullptr;
+	
 	while (keepOn) {
 		
 		cout << "Choose your game:" << endl;
