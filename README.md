@@ -1,2 +1,3 @@
-# mova1701_laboration
+# DesignPatters
 
+Assignments for learning design patterns in C++
